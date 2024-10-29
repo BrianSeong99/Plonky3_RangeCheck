@@ -462,13 +462,13 @@ Degree is calculated by multiplying the number of columns used in the constraint
 
 Lower degree constraints generally lead to faster proof generation and smaller proof sizes. This is because the prover and verifier need to perform fewer operations to verify the proof. 
 
-> ***Degree d leads to a blowup by a factor of next_power_of_two(d - 1)***
+> ***Degree d leads to a blowup by a factor of log(next_power_of_two(d - 1))***
 
 In Plonky3, the degree of a constraint will directly impact the blowup factor of the proof. Ex. degree 3 results in a 2x blowup (the minimum), degree 5 results in 3x, degree 9 results in 4x. (Or something in between like degree 7 still results in 4x.).
 
 Let's do an example:
-- If we use the same column to multiply itself by 4 times, then the constraint will be degree 4, like `x * x * x * x`, results in 2x blowup.
-- If we use 5 columns to multiply one another, then its degree 5, `x * y * z * w * b`, results in 3x blowup.
+- If we use the same column to multiply itself by 5 times, then the constraint will be degree 5, like `x * x * x * x * x`, results in 2x blowup (logarithm of `next_power_of_two(5-1)`).
+- If we use 6 columns to multiply one another, then its degree 6, `x * y * z * w * b * a`, results in 3x blowup.
 
 ### BabyBear v1: A Degree-4 constraint
 
