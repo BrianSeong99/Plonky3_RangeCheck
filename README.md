@@ -106,14 +106,14 @@ pub fn generate_mersenne31_trace<F: Field>(value: u32) -> RowMajorMatrix<F> {
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     // Adding three extra rows of zeros
     for _ in 0..32*3 {
-        bits.push(F::zero());
+        bits.push(F::ZERO);
     }
     RowMajorMatrix::new(bits, 32)
 }
@@ -151,11 +151,11 @@ impl<AB: AirBuilder> Air<AB> for Mersenne31RangeCheckAir {
         let next_row = main.row_slice(1);
 
         // Assert that the most significant bit is zero, only checked when its first row
-        builder.when_first_row().assert_eq(current_row[0], AB::Expr::zero());
+        builder.when_first_row().assert_eq(current_row[0], AB::Expr::ZERO);
 
         // initializing the `reconstructed_value` and the `next_row_sum`
-        let mut reconstructed_value = AB::Expr::zero();
-        let mut next_row_rowsum = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
+        let mut next_row_rowsum = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             builder.assert_bool(bit); 
@@ -166,7 +166,7 @@ impl<AB: AirBuilder> Air<AB> for Mersenne31RangeCheckAir {
         // Assert if the reconstructed value matches the original value, only checked when its first row
         builder.when_first_row().assert_eq(AB::Expr::from_wrapped_u32(self.value), reconstructed_value);
         // Assert if the sum of each remaining row is zero in every transition. 
-        builder.when_transition().assert_eq(next_row_rowsum, AB::Expr::zero());
+        builder.when_transition().assert_eq(next_row_rowsum, AB::Expr::ZERO);
     }
 }
 ```
@@ -231,9 +231,9 @@ pub fn generate_trace<F: Field>(value: u32) -> RowMajorMatrix<F> {
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     RowMajorMatrix::new(bits, 32)
@@ -268,7 +268,7 @@ impl<AB: AirBuilder> Air<AB> for BabyBearRangeCheckAir {
         let current_row = main.row_slice(0);
 
         // Assert that the most significant bit is zero
-        builder.assert_eq(current_row[0], AB::Expr::zero());
+        builder.assert_eq(current_row[0], AB::Expr::ZERO);
 
         // Value to check if the 1st to 4th bits are all one
         let upper_bits_product = current_row[1..5].iter().map(|&bit| bit.into()).product::<AB::Expr>();
@@ -279,7 +279,7 @@ impl<AB: AirBuilder> Air<AB> for BabyBearRangeCheckAir {
         builder.when(upper_bits_product.clone()).assert_zero(remaining_bits_sum);
 
         // initializing the `reconstructed_value`
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             // Making sure every bit is either 0 or 1
@@ -353,9 +353,9 @@ pub fn generate_trace<F: Field>(value: u64) -> RowMajorMatrix<F> {
     let mut bits = Vec::with_capacity(64);
     for i in (0..64).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     
@@ -399,7 +399,7 @@ impl<AB: AirBuilder> Air<AB> for GoldilocksRangeCheckAir {
         builder.when(upper_bits_product.clone()).assert_zero(remaining_bits_sum);
 
         // initializing the `reconstructed_value`
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..64 {
             let bit = current_row[i];
             // Making sure every bit is either 0 or 1
@@ -531,7 +531,7 @@ where
         let current_row = main.row_slice(0);
 
         // Assert that the most significant bit is zero
-        builder.assert_eq(current_row[0], AB::Expr::zero());
+        builder.assert_eq(current_row[0], AB::Expr::ZERO);
 
         // Value to check if the 1st to 4th bits are all one
         builder.assert_eq(AB::Expr::from(self.and_most_sig_byte_decomp_4_to_3), current_row[4] * current_row[3]);
@@ -544,7 +544,7 @@ where
         // Assert if the 1st to 4th bits are all one, then `remaining_bits_sum` has to be zero.
         builder.when(AB::Expr::from(self.and_most_sig_byte_decomp_4_to_1)).assert_zero(remaining_bits_sum);
 
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             builder.assert_bool(bit); // Making sure every bit is either 0 or 1
@@ -565,9 +565,9 @@ pub fn generate_trace_and_inputs<F: Field>(value: u32) -> (RowMajorMatrix<F>, F,
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     let bits_clone = bits.clone();

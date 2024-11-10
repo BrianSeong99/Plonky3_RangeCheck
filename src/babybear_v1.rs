@@ -37,7 +37,7 @@ impl<AB: AirBuilder> Air<AB> for BabyBearRangeCheckAir {
         let current_row = main.row_slice(0);
 
         // Assert that the most significant bit is zero
-        builder.assert_eq(current_row[0], AB::Expr::zero());
+        builder.assert_eq(current_row[0], AB::Expr::ZERO);
 
         // Value to check if the 1st to 4th bits are all one
         let upper_bits_product = current_row[1..5].iter().map(|&bit| bit.into()).product::<AB::Expr>();
@@ -48,7 +48,7 @@ impl<AB: AirBuilder> Air<AB> for BabyBearRangeCheckAir {
         builder.when(upper_bits_product.clone()).assert_zero(remaining_bits_sum);
 
         // initializing the `reconstructed_value`
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             // Making sure every bit is either 0 or 1
@@ -66,9 +66,9 @@ pub fn generate_trace<F: Field>(value: u32) -> RowMajorMatrix<F> {
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     RowMajorMatrix::new(bits, 32)
