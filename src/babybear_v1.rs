@@ -12,7 +12,7 @@ use p3_keccak::Keccak256Hash;
 use p3_merkle_tree::MerkleTreeMmcs;
 use p3_monty_31::dft::RecursiveDft;
 use p3_symmetric::{CompressionFunctionFromHasher, SerializingHasher32};
-use p3_uni_stark::{prove, verify, StarkConfig};
+use p3_uni_stark::{get_max_constraint_degree, prove, verify, StarkConfig};
 use tracing_forest::util::LevelFilter;
 use tracing_forest::ForestLayer;
 use tracing_subscriber::layer::SubscriberExt;
@@ -104,6 +104,9 @@ pub fn prove_and_verify<F: Field>(value: u32) {
     type Challenger = SerializingChallenger32<Val, HashChallenger<u8, ByteHash, 32>>;
 
     let air = BabyBearRangeCheckAir { value };
+
+    let constraint_degree = get_max_constraint_degree::<Val, BabyBearRangeCheckAir>(&air, 0, 0);
+    assert_eq!(constraint_degree, 5);
     let trace = generate_trace::<Val>( value);
 
     let fri_config = FriConfig {

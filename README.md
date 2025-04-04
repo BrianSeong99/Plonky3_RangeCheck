@@ -470,16 +470,20 @@ Let's do an example:
 - If we use the same column to multiply itself by 4 times, then the constraint will be degree 4, like `x * x * x * x`, results in 2x blowup.
 - If we use 5 columns to multiply one another, then its degree 5, `x * y * z * w * b`, results in 3x blowup.
 
-### BabyBear v1: A Degree-4 constraint
+### BabyBear v1: A Degree-5 constraint
 
-In BabyBear v1, the circuit has a degree of 4 due to constraints like:
+In BabyBear v1, the circuit has a degree of 5 due to constraints like:
 
 ```rust
-// Value to check if the 1st to 4th bits are all one
+// Value to check if the 1st to 4th bits are all one. Generates a degree-4 constraint.
 let upper_bits_product = current_row[1..5].iter().map(|&bit| bit.into()).product::<AB::Expr>();
+...
+// One more degree is added to our constraint (due to how `assert_zero` works internally):
+builder.when(upper_bits_product.clone()).assert_zero(remaining_bits_sum);
 ```
 
-where `col 1-4` are multiplied together to get `upper_bits_product`, which resulted it to have a blowup factor of `2`. This is where we want to optimize the most in v2.
+where `col 1-4` are multiplied together to get `upper_bits_product` and then constrainted to zero, which resulted it to have a blowup factor of `2`.
+This is where we want to optimize the most in v2.
 
 ### BabyBear v2: A Degree-2 Constraint
 
