@@ -51,7 +51,7 @@ where
         let current_row = main.row_slice(0);
 
         // Assert that the most significant bit is zero
-        builder.assert_eq(current_row[0], AB::Expr::zero());
+        builder.assert_eq(current_row[0], AB::Expr::ZERO);
 
         // Value to check if the 1st to 4th bits are all one
         builder.assert_eq(AB::Expr::from(self.and_most_sig_byte_decomp_4_to_3), current_row[4] * current_row[3]);
@@ -64,7 +64,7 @@ where
         // Assert if the 2nd to 5th bits are all one, then `remaining_bits_sum` has to be zero.
         builder.when(AB::Expr::from(self.and_most_sig_byte_decomp_4_to_1)).assert_zero(remaining_bits_sum);
 
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             builder.assert_bool(bit); // Making sure every bit is either 0 or 1
@@ -81,9 +81,9 @@ pub fn generate_trace_and_inputs<F: Field>(value: u32) -> (RowMajorMatrix<F>, F,
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     let bits_clone = bits.clone();

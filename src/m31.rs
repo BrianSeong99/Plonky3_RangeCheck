@@ -40,10 +40,10 @@ impl<AB: AirBuilder> Air<AB> for Mersenne31RangeCheckAir {
         let next_row = main.row_slice(1);
 
         // Assert that the most significant bit is zero
-        builder.when_first_row().assert_eq(current_row[0], AB::Expr::zero());
+        builder.when_first_row().assert_eq(current_row[0], AB::Expr::ZERO);
 
-        let mut reconstructed_value = AB::Expr::zero();
-        let mut next_row_rowsum = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
+        let mut next_row_rowsum = AB::Expr::ZERO;
         for i in 0..32 {
             let bit = current_row[i];
             builder.assert_bool(bit); // Making sure every bit is either 0 or 1
@@ -53,7 +53,7 @@ impl<AB: AirBuilder> Air<AB> for Mersenne31RangeCheckAir {
 
         // Assert if the reconstructed value matches the original value
         builder.when_first_row().assert_eq(AB::Expr::from_wrapped_u32(self.value), reconstructed_value);
-        builder.when_transition().assert_eq(next_row_rowsum, AB::Expr::zero());
+        builder.when_transition().assert_eq(next_row_rowsum, AB::Expr::ZERO);
     }
 }
 
@@ -62,13 +62,13 @@ pub fn generate_mersenne31_trace<F: Field>(value: u32) -> RowMajorMatrix<F> {
     // Convert the value to binary, in big endian format
     for i in (0..32).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     for _ in 0..32*3 {
-        bits.push(F::zero());
+        bits.push(F::ZERO);
     }
     RowMajorMatrix::new(bits, 32)
 }

@@ -22,9 +22,9 @@ dependencies = [
 
 [[package]]
 name = "anstream"
-version = "0.6.15"
+version = "0.6.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "64e15c1ab1f89faffbf04a634d5e1962e9074f2741eef6d97f3c4e322426d526"
+checksum = "8acc5369981196006228e28809f761875c0327210a891e941f4c683b3a99529b"
 dependencies = [
  "anstyle",
  "anstyle-parse",
@@ -37,33 +37,33 @@ dependencies = [
 
 [[package]]
 name = "anstyle"
-version = "1.0.8"
+version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1"
+checksum = "55cc3b69f167a1ef2e161439aa98aed94e6028e5f9a59be9a6ffb47aef1651f9"
 
 [[package]]
 name = "anstyle-parse"
-version = "0.2.5"
+version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb47de1e80c2b463c735db5b217a0ddc39d612e7ac9e2e96a5aed1f57616c1cb"
+checksum = "3b2d16507662817a6a20a9ea92df6652ee4f94f914589377d69f3b21bc5798a9"
 dependencies = [
  "utf8parse",
 ]
 
 [[package]]
 name = "anstyle-query"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d36fc52c7f6c869915e99412912f22093507da8d9e942ceaf66fe4b7c14422a"
+checksum = "79947af37f4177cfead1110013d678905c37501914fba0efea834c3fe9a8d60c"
 dependencies = [
  "windows-sys",
 ]
 
 [[package]]
 name = "anstyle-wincon"
-version = "3.0.4"
+version = "3.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5bf74e1b6e971609db8ca7a9ce79fd5768ab6ae46441c572e46cf596f59e57f8"
+checksum = "2109dbce0e72be3ec00bed26e6a7479ca384ad226efdd66db8fa2e3a38c83125"
 dependencies = [
  "anstyle",
  "windows-sys",
@@ -117,9 +117,9 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "cc"
-version = "1.1.28"
+version = "1.1.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e80e3b6a3ab07840e1cae9b0666a63970dc28e8ed5ffbcdacbfc760c281bfc1"
+checksum = "40545c26d092346d8a8dab71ee48e7685a7a9cba76e634790c215b41a4a7b4cf"
 dependencies = [
  "shlex",
 ]
@@ -132,9 +132,9 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "clap"
-version = "4.5.19"
+version = "4.5.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7be5744db7978a28d9df86a214130d106a89ce49644cbc4e3f0c22c3fba30615"
+checksum = "b97f376d85a664d5837dbae44bf546e6477a679ff6610010f17276f686d867e8"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -142,9 +142,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.19"
+version = "4.5.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5fbc17d3ef8278f55b282b2a2e75ae6f6c7d4bb70ed3d0382375104bfafdb4b"
+checksum = "19bc80abd44e4bed93ca373a0704ccbd1b710dc5749406201bb018272808dc54"
 dependencies = [
  "anstream",
  "anstyle",
@@ -172,9 +172,9 @@ checksum = "1462739cb27611015575c0c11df5df7601141071f07518d56fcc1be504cbec97"
 
 [[package]]
 name = "colorchoice"
-version = "1.0.2"
+version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d3fd119d74b830634cea2a0f58bbd0d54540518a14397557951e79340abc28c0"
+checksum = "5b63caa9aa9397e2d9480a9b13673856c78d8ac123288526c37d7839f2a86990"
 
 [[package]]
 name = "constant_time_eq"
@@ -279,9 +279,9 @@ checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "libc"
-version = "0.2.159"
+version = "0.2.162"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5"
+checksum = "18d287de67fe55fd7e1581fe933d965a5a9477b38e949cfa9f8574ef01506398"
 
 [[package]]
 name = "log"
@@ -370,7 +370,7 @@ checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
 [[package]]
 name = "p3-air"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-field",
  "p3-matrix",
@@ -379,7 +379,7 @@ dependencies = [
 [[package]]
 name = "p3-baby-bear"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-field",
  "p3-mds",
@@ -393,7 +393,7 @@ dependencies = [
 [[package]]
 name = "p3-blake3"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "blake3",
  "p3-symmetric",
@@ -403,7 +403,7 @@ dependencies = [
 [[package]]
 name = "p3-challenger"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-field",
  "p3-maybe-rayon",
@@ -415,7 +415,7 @@ dependencies = [
 [[package]]
 name = "p3-circle"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-challenger",
@@ -433,7 +433,7 @@ dependencies = [
 [[package]]
 name = "p3-commit"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-challenger",
@@ -446,7 +446,7 @@ dependencies = [
 [[package]]
 name = "p3-dft"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-field",
@@ -459,7 +459,7 @@ dependencies = [
 [[package]]
 name = "p3-field"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "num-bigint",
@@ -476,7 +476,7 @@ dependencies = [
 [[package]]
 name = "p3-fri"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-challenger",
@@ -494,7 +494,7 @@ dependencies = [
 [[package]]
 name = "p3-goldilocks"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "num-bigint",
  "p3-dft",
@@ -510,7 +510,7 @@ dependencies = [
 [[package]]
 name = "p3-interpolation"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-field",
  "p3-matrix",
@@ -520,7 +520,7 @@ dependencies = [
 [[package]]
 name = "p3-keccak"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-field",
@@ -532,7 +532,7 @@ dependencies = [
 [[package]]
 name = "p3-matrix"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-field",
@@ -547,12 +547,12 @@ dependencies = [
 [[package]]
 name = "p3-maybe-rayon"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 
 [[package]]
 name = "p3-mds"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-dft",
@@ -566,7 +566,7 @@ dependencies = [
 [[package]]
 name = "p3-merkle-tree"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-commit",
@@ -575,6 +575,7 @@ dependencies = [
  "p3-maybe-rayon",
  "p3-symmetric",
  "p3-util",
+ "rand",
  "serde",
  "tracing",
 ]
@@ -582,7 +583,7 @@ dependencies = [
 [[package]]
 name = "p3-mersenne-31"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "num-bigint",
@@ -601,7 +602,7 @@ dependencies = [
 [[package]]
 name = "p3-monty-31"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "num-bigint",
@@ -622,7 +623,7 @@ dependencies = [
 [[package]]
 name = "p3-poseidon"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-field",
  "p3-mds",
@@ -633,7 +634,7 @@ dependencies = [
 [[package]]
 name = "p3-poseidon2"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "gcd",
  "p3-field",
@@ -645,7 +646,7 @@ dependencies = [
 [[package]]
 name = "p3-sha256"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "p3-symmetric",
  "p3-util",
@@ -655,7 +656,7 @@ dependencies = [
 [[package]]
 name = "p3-symmetric"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-field",
@@ -665,7 +666,7 @@ dependencies = [
 [[package]]
 name = "p3-uni-stark"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "itertools",
  "p3-air",
@@ -683,16 +684,16 @@ dependencies = [
 [[package]]
 name = "p3-util"
 version = "0.1.0"
-source = "git+https://github.com/Plonky3/Plonky3.git#483bda88b0322fc0dd9e361736e730eb6e96bb80"
+source = "git+https://github.com/Plonky3/Plonky3.git#db48728f6dbfdedab0c580eb7c9aeb06fb74613d"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "pin-project-lite"
-version = "0.2.14"
+version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bda66fc9667c18cb2758a2ac84d1167245054bcf85d5d1aaa6923f45801bdd02"
+checksum = "915a1e146535de9163f3987b8944ed8cf49a18bb0056bcebcdcece385cece4ff"
 
 [[package]]
 name = "plonky3_rangecheck"
@@ -737,9 +738,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.86"
+version = "1.0.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77"
+checksum = "f139b0662de085916d1fb67d2b4169d1addddda1919e696f3252b740b629986e"
 dependencies = [
  "unicode-ident",
 ]
@@ -785,9 +786,9 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.11.0"
+version = "1.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "38200e5ee88914975b69f657f0801b6f6dccafd44fd9326302a4aaeecfacb1d8"
+checksum = "b544ef1b4eac5dc2db33ea63606ae9ffcfac26c1416a2806ae0bf5f56b201191"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -829,18 +830,18 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 
 [[package]]
 name = "serde"
-version = "1.0.210"
+version = "1.0.214"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8e3592472072e6e22e0a54d5904d9febf8508f65fb8552499a1abc7d1078c3a"
+checksum = "f55c3193aca71c12ad7890f1785d2b73e1b9f63a0bbc353c08ef26fe03fc56b5"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.210"
+version = "1.0.214"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "243902eda00fad750862fc144cea25caca5e20d615af0a81bee94ca738f1df1f"
+checksum = "de523f781f095e28fa605cdce0f8307e451cc0fd14e2eb4cd2e98a355b147766"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -893,9 +894,9 @@ checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
 
 [[package]]
 name = "syn"
-version = "2.0.79"
+version = "2.0.87"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89132cd0bf050864e1d38dc3bbc07a0eb8e7530af26344d3d2bbbef83499f590"
+checksum = "25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -904,18 +905,18 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.64"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d50af8abc119fb8bb6dbabcfa89656f46f84aa0ac7688088608076ad2b459a84"
+checksum = "b6aaf5339b578ea85b50e080feb250a3e8ae8cfcdff9a461c9ec2904bc923f52"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.64"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "08904e7672f5eb876eaaf87e0ce17857500934f4981c4a0ab2b4aa98baac7fc3"
+checksum = "4fee6c4efc90059e10f81e6d42c60a18f76588c3d74cb83a0b242a2b6c7504c1"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1085,9 +1086,9 @@ checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "windows-sys"
-version = "0.52.0"
+version = "0.59.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d"
+checksum = "1e38bc4d79ed67fd075bcc251a1c39b32a1776bbe92e5bef1f0bf1f8c531853b"
 dependencies = [
  "windows-targets",
 ]

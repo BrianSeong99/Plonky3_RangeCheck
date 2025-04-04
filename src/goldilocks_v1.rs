@@ -47,7 +47,7 @@ impl<AB: AirBuilder> Air<AB> for GoldilocksRangeCheckAir {
         // builder.assert_zero(remaining_bits_sum);
 
         // initializing the `reconstructed_value`
-        let mut reconstructed_value = AB::Expr::zero();
+        let mut reconstructed_value = AB::Expr::ZERO;
         for i in 0..64 {
             let bit = current_row[i];
             // Making sure every bit is either 0 or 1
@@ -64,9 +64,9 @@ pub fn generate_trace<F: Field>(value: u64) -> RowMajorMatrix<F> {
     let mut bits = Vec::with_capacity(64);
     for i in (0..64).rev() {
         if (value & (1 << i)) != 0 {
-            bits.push(F::one());
+            bits.push(F::ONE);
         } else {
-            bits.push(F::zero());
+            bits.push(F::ZERO);
         }
     }
     
